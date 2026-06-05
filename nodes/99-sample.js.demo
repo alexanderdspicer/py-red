@@ -1,5 +1,0 @@
-from nodes.base import node
-
-class demo(node):
-    async def input(self, msg):
-        pass

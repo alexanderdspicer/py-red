@@ -1,0 +1,28 @@
+[project]
+name = "pyred"
+version = "1.0.0"
+
+readme = "README.md"
+license = "MIT AND Apache-2.0"
+license-file = ["LICEN[CS]E*"]
+
+requires-python = ">=3.10"
+dependencies = [
+    "flask[async]"
+    "flask-sock"
+    "flask-executor"
+    "jsonata-python"
+]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.10",
+]
+
+[projects.gui-scripts]
+pyred = "pyred:launch"
+
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
