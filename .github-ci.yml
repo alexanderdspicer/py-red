@@ -1,0 +1,16 @@
+variables:
+  TARGET_NODE: "4.1.11"
+
+build-job:
+  stage: build
+  image: 'python3.10'
+  script:
+    - python3 -m pip install --upgrade pip
+    - pip3 install build wheel
+    - git clone --branch $TARGET_NODE --depth 1 "https://github.com/node-red/node-red"
+    - cp ./node-red/packages/node_modules ./node_modules -r
+    - rm -rf node-red
+    - build
+  artifacts:
+    paths:
+      - dists/

@@ -11,13 +11,22 @@ dependencies = [
     "flask[async]"
     "flask-sock"
     "flask-executor"
-    "jsonata-python"
+    "jsonata-python",
+    "chevron",
+    "stpyv8",
 ]
 
 classifiers = [
     "Development Status :: 4 - Beta",
-    "Operating System :: OS Independent",
+
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: POSIX :: Other",
+    "Operating System :: Microsoft :: Windows",
+
     "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python",
+    "Programming Language :: Javascript",
 ]
 
 [projects.gui-scripts]
@@ -26,3 +35,9 @@ pyred = "pyred:launch"
 [build-system]
 requires = ["setuptools >= 77.0.3"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
